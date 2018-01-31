@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.gradle/
+/.idea/
+/build/
+/crashlogs/
+/preferences/
+/saves/
+/libs/desktop-1.0.jar
+/info.displayconfig
+/SlayTheSpire.log
