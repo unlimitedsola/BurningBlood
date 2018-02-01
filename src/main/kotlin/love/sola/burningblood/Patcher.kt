@@ -20,7 +20,7 @@ internal fun patch(
 ) {
     classLoader.getResourceAsStream(name.replace('.', '/') + ".class").use {
         val cr = ClassReader(it)
-        val cw = ClassWriter(cr, 0)
+        val cw = ClassWriter(cr, ClassWriter.COMPUTE_MAXS or ClassWriter.COMPUTE_FRAMES)
         cr.accept(patcher(cw), 0)
         val data = cw.toByteArray()
         defineMethod.invoke(ClassLoader.getSystemClassLoader(), name, data, 0, data.size)
